@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         // put your code here
         Addition newAddition = new Addition(scanner);
-        newAddition.add();
+        newAddition.readAddends();
 
     }
 }

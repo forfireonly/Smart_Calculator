@@ -12,17 +12,25 @@ public class Addition {
     }
 
     public void readAddends() {
-        int i = 0;
-
-
-
-        /*firstAddend = scn.nextInt();
-        /*secondAddend = scn.nextInt();
-        /*String stringAddends = scn.nextLine();
-        String[] arrayOfAddends = stringAddends.split(" ");
-        firstAddend  = Integer.parseInt(arrayOfAddends[0]);
-        secondAddend = Integer.parseInt(arrayOfAddends[1]);*/
+        String stringAddends = scn.nextLine();
+        while (!stringAddends.equals("/exit")) {
+            if (stringAddends.contains(" ")) {
+                String[] arrayOfAddends = stringAddends.split(" ");
+                firstAddend = Integer.parseInt(arrayOfAddends[0]);
+                secondAddend = Integer.parseInt(arrayOfAddends[1]);
+            } else if (stringAddends.equals("")) {
+                stringAddends = scn.nextLine();
+                continue;
+            } else {
+                firstAddend = Integer.parseInt(stringAddends);
+                secondAddend = 0;
+            }
+            System.out.println(firstAddend + secondAddend);
+            stringAddends = scn.nextLine();
+        }
+        System.out.println("Bye!");
     }
+
 
     public void add() {
         readAddends();
