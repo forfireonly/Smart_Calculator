@@ -175,6 +175,62 @@ files:
         }
     }
   learner_created: false
+- name: src/calculator/Addition.java
+  visible: true
+  text: |
+    package calculator;
+
+    import java.util.Scanner;
+
+    public class Addition {
+        Scanner scn;
+        int firstAddend;
+        int secondAddend;
+
+        Addition(Scanner scn) {
+            this.scn = scn;
+        }
+
+        public void readAddends() {
+            String stringAddends = scn.nextLine();
+            int sum = 0;
+            while (!stringAddends.equals("/exit")) {
+                if (stringAddends.contains(" ")) {
+                    String[] arrayOfAddends = stringAddends.split(" ");
+                    for (String member : arrayOfAddends) {
+                        sum += Integer.parseInt(member);
+                    }
+
+                } else if (stringAddends.equals("")) {
+                    stringAddends = scn.nextLine();
+                    continue;
+                } else if (stringAddends.equals("/help")) {
+                    System.out.println("The program calculates the sum of numbers");
+                } else {
+                    sum = Integer.parseInt(stringAddends);
+
+                }
+
+                System.out.println(sum);
+                stringAddends = scn.nextLine();
+                sum = 0;
+            }
+            System.out.println("Bye!");
+        }
+
+
+        public void add() {
+            readAddends();
+            System.out.println(firstAddend + secondAddend);
+        }
+
+
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/42/stages/223/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/42/stages/223/implement">JetBrains
+    Academy</a>
+  time: Mon, 21 Dec 2020 01:43:54 UTC
 record: -1
