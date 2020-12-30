@@ -11,3 +11,5 @@ content:
 - Remove extra spaces
 - Remove HTML tags
 - Remove comments
+- Create instance
+- Get the game mode
